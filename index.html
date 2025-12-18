@@ -2,78 +2,57 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Attorney at Law | Abogada</title>
+<title>Firma Legal | Abogada</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{
   font-family:'Inter',system-ui;
-  background:#0b0b0f;
+  background:#0b0b0b;
   color:#fff;
   overflow-x:hidden;
 }
+a{text-decoration:none;color:inherit}
 
 /* ===== HEADER ===== */
 header{
   position:fixed;
-  top:0;
-  width:100%;
-  padding:18px 24px;
-  background:rgba(10,10,20,.55);
-  backdrop-filter:blur(16px);
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 36px);
+  max-width:1100px;
+  padding:14px 22px;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(18px);
+  border-radius:18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  z-index:100;
+  z-index:50;
 }
-
-.logo{
-  font-weight:800;
-  letter-spacing:.18em;
-  font-size:14px;
-}
-
-nav{
-  display:flex;
-  align-items:center;
-  gap:24px;
-}
-
-nav a{
-  color:#fff;
-  text-decoration:none;
-  font-size:12px;
-  letter-spacing:.14em;
-  opacity:.8;
-}
-nav a:hover{opacity:1}
-
-/* ===== LANGUAGE SWITCH ===== */
 .lang{
-  border:1px solid rgba(255,255,255,.3);
-  border-radius:999px;
-  overflow:hidden;
   display:flex;
-  font-size:11px;
+  gap:12px;
+  font-size:12px;
+  letter-spacing:.12em;
 }
-.lang button{
-  background:none;
-  border:none;
-  color:#fff;
-  padding:6px 12px;
+.lang span{
   cursor:pointer;
   opacity:.6;
 }
-.lang button.active{
-  background:#f2a93b;
-  color:#000;
-  opacity:1;
-  font-weight:700;
+.lang span.active{opacity:1;font-weight:600}
+.contact-link{
+  font-size:12px;
+  letter-spacing:.14em;
+  opacity:.75;
 }
+.contact-link:hover{opacity:1}
+
+.spacer{height:110px}
 
 /* ===== HERO ===== */
 .hero{
@@ -83,121 +62,97 @@ nav a:hover{opacity:1}
     url('fondo.jpg') center/cover no-repeat;
   display:flex;
   align-items:center;
-  padding:120px 24px 60px;
 }
-
 .hero-content{
-  max-width:520px;
+  max-width:1100px;
+  padding:40px 20px;
+  margin:auto;
 }
-
-.hero-tag{
-  border:1px solid rgba(255,255,255,.35);
-  padding:10px 14px;
-  border-radius:999px;
-  display:inline-block;
-  font-size:12px;
-  letter-spacing:.14em;
-  margin-bottom:18px;
-}
-
 .hero h1{
-  font-size:clamp(34px,5vw,56px);
+  font-size:clamp(36px,5vw,60px);
   font-weight:800;
-  line-height:1.1;
   margin-bottom:20px;
 }
-
 .hero p{
-  opacity:.85;
+  max-width:520px;
+  opacity:.8;
+  font-size:16px;
   line-height:1.6;
-  margin-bottom:28px;
-}
-
-.btn{
-  display:inline-block;
-  background:#f2a93b;
-  color:#000;
-  padding:16px 26px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:13px;
-  letter-spacing:.14em;
-  text-decoration:none;
 }
 
 /* ===== SECTIONS ===== */
 section{
-  padding:100px 24px;
+  padding:100px 20px;
   max-width:1100px;
   margin:auto;
 }
-
-.section-title{
-  text-align:center;
+h2{
   font-size:34px;
-  font-weight:800;
-  margin-bottom:16px;
+  margin-bottom:20px;
 }
-
-.section-sub{
-  text-align:center;
+.sub{
   opacity:.65;
   max-width:700px;
-  margin:0 auto 60px;
+  margin-bottom:60px;
   line-height:1.6;
-}
-
-/* ===== TESTIMONIALS ===== */
-.testimonials{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:24px;
-}
-
-.testimonial{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:22px;
-  padding:24px;
 }
 
 /* ===== SERVICES ===== */
 .services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px;
+}
+.service{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+}
+.service img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+.service div{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.2));
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.service strong{
+  font-size:16px;
+  letter-spacing:.08em;
+}
+.service span{
+  font-size:14px;
+  opacity:.7;
 }
 
-.service{
-  background:rgba(255,255,255,.06);
+/* ===== CASES & REVIEWS ===== */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px;
+}
+.card{
+  background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.12);
   border-radius:22px;
   padding:26px;
 }
-
-/* ===== IMAGES ===== */
-.images{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
-}
-.images img{
-  width:100%;
-  border-radius:24px;
-  object-fit:cover;
-}
-@media(max-width:800px){
-  .images{grid-template-columns:1fr}
-}
+.card p{opacity:.7;line-height:1.6;margin-top:10px}
 
 /* ===== CONTACT ===== */
-.contact{
-  background:rgba(255,255,255,.06);
+.contact-box{
+  background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.12);
   border-radius:26px;
   padding:40px;
-  text-align:center;
 }
+.contact-box p{opacity:.7;line-height:1.6;margin-top:10px}
 
 /* ===== FOOTER ===== */
 footer{
@@ -205,146 +160,151 @@ footer{
   text-align:center;
   font-size:12px;
   opacity:.45;
-  border-top:1px solid rgba(255,255,255,.08);
+  border-top:1px solid rgba(255,255,255,.1);
 }
 
 /* ===== LANGUAGE ===== */
-[data-lang]{display:none}
-[data-lang].active{display:block}
+[data-en]{display:none}
+body.en [data-es]{display:none}
+body.en [data-en]{display:block}
+[data-es]{display:block}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">LAW FIRM</div>
-  <nav>
-    <a href="#services" data-es>Servicios</a>
-    <a href="#services" data-en>Services</a>
-    <a href="#contact" data-es>Contacto</a>
-    <a href="#contact" data-en>Contact</a>
-
-    <div class="lang">
-      <button id="esBtn" class="active">ES</button>
-      <button id="enBtn">EN</button>
-    </div>
-  </nav>
+  <div class="lang">
+    <span class="active" onclick="setLang('es')">ES</span>
+    <span onclick="setLang('en')">EN</span>
+  </div>
+  <a href="#contacto" class="contact-link">CONTACTO</a>
 </header>
+
+<div class="spacer"></div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
+    <h1 data-es>Defensa legal con<br>claridad y compromiso</h1>
+    <h1 data-en>Legal guidance with<br>clarity and commitment</h1>
 
-    <div class="hero-tag" data-es>Abogada</div>
-    <div class="hero-tag" data-en>Attorney at Law</div>
-
-    <h1 data-es class="active">
-      Juntos creamos<br>un nuevo comienzo
-    </h1>
-
-    <h1 data-en>
-      Together we build<br>a new beginning
-    </h1>
-
-    <p data-es class="active">
-      Representación legal honesta, clara y profesional.
-      Te acompañamos con respeto y compromiso en cada paso.
+    <p data-es>
+      Acompañamiento profesional en procesos legales complejos.
+      Cada caso tratado con respeto, ética y transparencia.
     </p>
-
     <p data-en>
-      Honest, clear and professional legal representation.
-      We guide you with respect and commitment every step of the way.
+      Professional guidance through complex legal processes.
+      Every case handled with respect, ethics, and transparency.
     </p>
-
-    <a href="#contact" class="btn" data-es class="active">Contactar</a>
-    <a href="#contact" class="btn" data-en>Contact Us</a>
-
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services">
-  <h2 class="section-title" data-es class="active">Servicios Legales</h2>
-  <h2 class="section-title" data-en>Legal Services</h2>
+<section>
+  <h2 data-es>Servicios legales</h2>
+  <h2 data-en>Legal Services</h2>
 
-  <p class="section-sub" data-es class="active">
-    Asesoría completa y estratégica para proteger tus derechos.
+  <p class="sub" data-es>
+    Asesoría legal responsable enfocada en resultados reales,
+    sin promesas falsas ni atajos.
   </p>
-
-  <p class="section-sub" data-en>
-    Comprehensive legal guidance to protect your rights.
+  <p class="sub" data-en>
+    Responsible legal counsel focused on real outcomes,
+    without false promises or shortcuts.
   </p>
 
   <div class="services">
     <div class="service">
-      <strong>Inmigración</strong><br>
-      <span data-es>Visas, residencia, ciudadanía</span>
-      <span data-en>Visas, residency, citizenship</span>
+      <img src="foto1.jpg">
+      <div>
+        <strong data-es>Inmigración</strong>
+        <strong data-en>Immigration</strong>
+        <span data-es>Visas, residencia y ciudadanía</span>
+        <span data-en>Visas, residency & citizenship</span>
+      </div>
     </div>
+
     <div class="service">
-      <strong>Familia</strong><br>
-      <span data-es>Divorcio, custodia, manutención</span>
-      <span data-en>Divorce, custody, family law</span>
-    </div>
-    <div class="service">
-      <strong>Defensa Legal</strong><br>
-      <span data-es>Representación ante cortes</span>
-      <span data-en>Legal court representation</span>
-    </div>
-    <div class="service">
-      <strong>Consultoría</strong><br>
-      <span data-es>Orientación legal personalizada</span>
-      <span data-en>Personalized legal guidance</span>
+      <img src="foto2.jpg">
+      <div>
+        <strong data-es>Casos humanitarios</strong>
+        <strong data-en>Humanitarian cases</strong>
+        <span data-es>VAWA, U Visa y protección legal</span>
+        <span data-en>VAWA, U Visa & legal protection</span>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- CASES -->
 <section>
-  <div class="images">
-    <img src="foto1.jpg">
-    <img src="foto2.jpg">
+  <h2 data-es>Casos & Resultados</h2>
+  <h2 data-en>Cases & Results</h2>
+
+  <div class="cards">
+    <div class="card">
+      <strong data-es>Residencia permanente</strong>
+      <strong data-en>Permanent residency</strong>
+      <p data-es>Ajustes de estatus y peticiones familiares.</p>
+      <p data-en>Status adjustments and family petitions.</p>
+    </div>
+
+    <div class="card">
+      <strong data-es>Ciudadanía</strong>
+      <strong data-en>Citizenship</strong>
+      <p data-es>Preparación y acompañamiento completo.</p>
+      <p data-en>Preparation and full legal support.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <h2 data-es>Opiniones reales</h2>
+  <h2 data-en>Client Reviews</h2>
+
+  <div class="cards">
+    <div class="card">
+      <strong>María D.</strong>
+      <p>“Profesionalismo y claridad desde el primer día.”</p>
+    </div>
+    <div class="card">
+      <strong>Pedro N.</strong>
+      <p>“Cumplieron exactamente lo que me explicaron.”</p>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="contact">
-    <h2 class="section-title" data-es class="active">Contacto</h2>
-    <h2 class="section-title" data-en>Contact</h2>
+<section id="contacto">
+  <h2 data-es>Contacto</h2>
+  <h2 data-en>Contact</h2>
 
-    <p data-es class="active">
-      Agenda una consulta confidencial.
+  <div class="contact-box">
+    <p data-es>
+      Consulta confidencial. Atención personalizada.
+      <br>Email: contacto@firmalegal.com
+      <br>Tel: (000) 000-0000
     </p>
     <p data-en>
-      Schedule a confidential consultation.
+      Confidential consultation. Personalized attention.
+      <br>Email: contacto@firmalegal.com
+      <br>Phone: (000) 000-0000
     </p>
-
-    <a href="tel:+1234567890" class="btn" data-es class="active">Llamar</a>
-    <a href="tel:+1234567890" class="btn" data-en>Call Now</a>
   </div>
 </section>
 
 <footer>
-  © 2025 Law Firm · All rights reserved
+  © 2025 Firma Legal · Todos los derechos reservados
 </footer>
 
 <script>
-const esBtn = document.getElementById("esBtn");
-const enBtn = document.getElementById("enBtn");
-
-function setLang(lang){
-  document.querySelectorAll("[data-es],[data-en]").forEach(el=>{
-    el.classList.remove("active");
-  });
-  document.querySelectorAll("[data-"+lang+"]").forEach(el=>{
-    el.classList.add("active");
-  });
-  esBtn.classList.toggle("active", lang==="es");
-  enBtn.classList.toggle("active", lang==="en");
+function setLang(l){
+  document.body.className = l === 'en' ? 'en' : '';
+  document.querySelectorAll('.lang span').forEach(s=>s.classList.remove('active'));
+  document.querySelector('.lang span'+(l==='en'?':nth-child(2)':':nth-child(1)')).classList.add('active');
 }
-
-esBtn.onclick = ()=>setLang("es");
-enBtn.onclick = ()=>setLang("en");
 </script>
 
 </body>
